@@ -20,26 +20,37 @@ class TestCases(unittest.TestCase):
 
 
     #### Add tests for Time.__eq__
-    def testTime_eq_1(self):
+    def test_Time_eq_1(self):
         time1 = Time(6,35,27)
         time2 = Time(6,35,27)
         self.assertEqual(time1, time2)
 
-    def testTime_eq_2(self):
+    def test_Time_eq_2(self):
         time1 = Time(0,35,27)
         time2 = Time(6,35,27)
         self.assertNotEqual(time1, time2)
 
-    def testTime_eq_3(self):
+    def test_Time_eq_3(self):
         time1 = Time(6,36,27)
         time2 = Time(6,35,27)
         self.assertNotEqual(time1, time2)
 
-    def testTime_eq_4(self):
+    def test_Time_eq_4(self):
         time1 = Time(6,35,23)
         time2 = Time(6,35,27)
         self.assertNotEqual(time1, time2)
+
     #### Add tests for Time.__repr__
+    def test_Time_repr_1(self):
+        time = Time(4, 35, 42)
+        expected_string = "Hours: {}, Minutes: {}, Seconds: {}".format(4, 35, 42)
+        self.assertEqual(time.__repr__(), expected_string)
+
+    def test_Time_repr_2(self):
+        time = Time(0, 5, 0)
+        expected_string = "Hours: {}, Minutes: {}, Seconds: {}".format(0, 5, 0)
+        self.assertEqual(time.__repr__(), expected_string)
+
 
 
 
