@@ -79,7 +79,6 @@ class TestCases(unittest.TestCase):
         self.assertEqual(expected, actual)
 
     # Part 6
-    from data import Point
 
     def test_furthest_from_origin_1(self):
         input = [data.Point(0, 0),
